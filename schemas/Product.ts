@@ -23,9 +23,8 @@ export const Product = list({
       },
     }),
     price: integer(),
-    photos: relationship({
+    photo: relationship({
       ref: 'ProductImage.product',
-      many: true,
       ui: {
         displayMode: 'cards',
         cardFields: ['image', 'altText'],

@@ -9,6 +9,7 @@ import {
 import { User } from './schemas/User';
 import { Product } from './schemas/Product';
 import { ProductImage } from './schemas/ProductImage';
+import { insertSeedData } from './seed-data';
 // import { Category } from './schemas/Category';
 // import { SubCategory } from './schemas/SubCategory';
 
@@ -41,6 +42,11 @@ export default withAuth(
     db: {
       adapter: 'mongoose',
       url: databaseURL,
+      onConnect: async (keystone) => {
+        if (process.argv.includes('--seed-data')) {
+          await insertSeedData(keystone)          
+        }
+      }
     },
     lists: createSchema({
       User,
