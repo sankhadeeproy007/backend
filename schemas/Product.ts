@@ -33,10 +33,10 @@ export const Product = list({
         inlineEdit: { fields: ['image', 'altText'] },
       },
     }),
-    // subcategory: relationship({
-    //   ref: 'SubCategory.products',
-    //   many: false,
-    // }),
+    subcategory: relationship({
+      ref: 'SubCategory.products',
+      many: false,
+    }),
   },
   ui: {
     listView: {

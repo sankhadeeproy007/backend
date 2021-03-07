@@ -9,8 +9,8 @@ import {
 import { User } from './schemas/User';
 import { Product } from './schemas/Product';
 import { ProductImage } from './schemas/ProductImage';
-// import { Category } from './schemas/Category';
-// import { SubCategory } from './schemas/SubCategory';
+import { Category } from './schemas/Category';
+import { SubCategory } from './schemas/SubCategory';
 
 const databaseURL = process.env.DATABASE_URL || 'mongodb://localhost/ecommerce';
 
@@ -46,8 +46,8 @@ export default withAuth(
       User,
       Product,
       ProductImage,
-      // Category,
-      // SubCategory,
+      Category,
+      SubCategory,
     }),
     ui: {
       // Show the UI only for poeple who pass this test
